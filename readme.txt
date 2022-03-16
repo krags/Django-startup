@@ -1,0 +1,1 @@
+gitignore.io will create a good .gitignore file
