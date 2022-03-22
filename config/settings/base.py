@@ -1,10 +1,15 @@
+import os
 import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv, find_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+TEMPLATE_DIR =  os.path.join(BASE_DIR,"templates")
+
 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',
+    'quotes.apps.QuotesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -14,6 +19,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'storages',
     'blog',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -31,7 +37,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/blog/templates/blog'],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
