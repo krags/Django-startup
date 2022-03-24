@@ -3,21 +3,21 @@ from django.http import HttpResponseRedirect
 from django.core.mail import send_mail, get_connection
 from django.views import View
 from django.http import HttpResponse
-from .forms import InputForm
+from .forms import InputForm, ContactForm
 from .models import Page
-from .forms import ContactForm
 
-def index(request, pagename):
-    pagename = '/' + pagename
-    pg = get_object_or_404(Page, permalink=pagename)
-    context = {
-        'title': pg.title,
-        'content': pg.bodytext,
-        'last_updated': pg.update_date,
-        'page_list': Page.objects.all(),
-    }
+def index(request):
+    # pagename = '/' + pagename
+    # pagename = '/test/'
+    # pg = get_object_or_404(Page, permalink=pagename)
+    # context = {
+    #     'title': pg.title,
+    #     'content': pg.bodytext,
+    #     'last_updated': pg.update_date,
+    #     'page_list': Page.objects.all(),
+    # }
     # assert False
-    return render(request, 'pages/page.html', context)
+    return render(request, 'pages/index.html')
 
 def contact(request):
     submitted = False

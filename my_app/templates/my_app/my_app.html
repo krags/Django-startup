@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block content %}
+<h1>About Me</h1>
+<br>
+  {% for post in posts %} 
+    <h1>{{ post.title }}</h1>
+    <p>By {{ post.author }} on {{ post.date_posted }}</p>
+    <p>{{ post.content }}</p>
+  {% endfor %} 
+<br>
+{% comment %} <a href="{% url 'mypost'%}">mypost</a> {% endcomment %}
+<br>
+{% endblock content %}

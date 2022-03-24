@@ -10,6 +10,8 @@ TEMPLATE_DIR =  os.path.join(BASE_DIR,"templates")
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'quotes.apps.QuotesConfig',
+    'resume_pics.apps.ResumePicsConfig',
+    'my_app.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
