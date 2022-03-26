@@ -5,7 +5,7 @@ import dj_database_url
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['.keithragsdale.com']
+ALLOWED_HOSTS = ['keithragsdale.com']
 
 SESSION_COOKIE_SECURE = True
 
@@ -53,21 +53,21 @@ LOGGING = {
 
 # Heroku Settings
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydatabase',
+#         'USER': 'mydatabaseuser',
+#         'PASSWORD': 'mypassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config()
 
-django_on_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
+# django_on_heroku.settings(locals())
+# del DATABASES['default']['OPTIONS']['sslmode']
 
 
