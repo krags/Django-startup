@@ -57,20 +57,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)}
+
 load_dotenv(find_dotenv())
 
-# DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)}
-
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'postgres',
-       'USER': 'postgres',
-       'PASSWORD': 'qazwsxedcr',
-       'HOST': 'localhost',
-       'PORT': '5432',
-   }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

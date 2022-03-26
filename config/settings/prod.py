@@ -4,7 +4,7 @@ import django_on_heroku
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['.keithragsdale.com']
+ALLOWED_HOSTS = ['keithragsdale.com']
 
 SESSION_COOKIE_SECURE = True
 
@@ -50,6 +50,12 @@ LOGGING = {
     }
 }
 
+
+DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)}
+
+
 # Heroku Settings
 django_on_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
+
+
