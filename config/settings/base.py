@@ -56,10 +56,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
-
 load_dotenv(find_dotenv())
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -82,3 +79,5 @@ USE_I18N = True
 USE_TZ = True
  
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

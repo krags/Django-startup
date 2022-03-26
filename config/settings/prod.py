@@ -54,15 +54,18 @@ LOGGING = {
 # Heroku Settings
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd5j1jdkrlirfgg',
-       'USER': 'wutervvjpapjiz',
-       'PASSWORD': 'f18d1d44ce4f9d88a2f8737acf3f85a161a69628917689d117e7aa73afadb40d',
-       'HOST': 'ec2-34-233-157-9.compute-1.amazonaws.com',
-       'PORT': '5432',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
 }
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
 django_on_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
