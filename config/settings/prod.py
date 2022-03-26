@@ -1,10 +1,11 @@
 from .base import *
 from decouple import config
 import django_on_heroku
+import dj_database_url
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['keithragsdale.com']
+ALLOWED_HOSTS = ['.keithragsdale.com']
 
 SESSION_COOKIE_SECURE = True
 
@@ -50,11 +51,19 @@ LOGGING = {
     }
 }
 
-
-DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)}
-
-
 # Heroku Settings
+
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'd5j1jdkrlirfgg',
+       'USER': 'wutervvjpapjiz',
+       'PASSWORD': 'f18d1d44ce4f9d88a2f8737acf3f85a161a69628917689d117e7aa73afadb40d',
+       'HOST': 'ec2-34-233-157-9.compute-1.amazonaws.com',
+       'PORT': '5432',
+   }
+}
+
 django_on_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
 

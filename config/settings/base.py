@@ -1,5 +1,4 @@
 import os
-import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv, find_dotenv
 
@@ -57,7 +56,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)}
+
 
 load_dotenv(find_dotenv())
 
