@@ -1,3 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for items in posts %}
+<h1>posts.author</h1>
+{% endfor %}
+
+<p>{{var1}}</p>
+<p>{{fox}}</p>
+<p>{{blue}}</p>
+
+<br>
+<br>
 <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
-  <label>upload file<input type="file" name="file" id="file" /></label>
-  <label><input type="submit" name="button" id="button" value="Submit" /></label></form>
+  <label>Upload File<input type="file" name="file" id="file" /></label>
+  <label><input type="submit" class="btn btn-primary" name="button" id="button" value="Submit" /></label>
+</form>
+
+
+{% endblock content %}

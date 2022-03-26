@@ -1,0 +1,18 @@
+################################
+DEVELOPMENT
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'checkstatic/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = BASE_DIR / 'media'
+
+################################
+PRODUCTION
+DEFAULT_FILE_STORAGE = 'storages.backends.s3Boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3Boto3.S3StaticStorage'
+
+
+
+d: STATIC_URL = '/static/'
+p: STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+
+d: MEDIA_URL =  'media/'
+p: MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'

@@ -25,7 +25,18 @@ def about(request):
     return render(request, 'my_app/about.html', {'title': 'Test'})
 
 def test(request):
-    return render(request, 'my_app/test.html')
+    blue = 4
+    test_var= {
+        'var1': 'Value',
+        'var2': [1, 2, 3],
+        'fox': 'grey',
+        "blue": blue,
+        'posts': posts,
+        }
+    return render(request, 'my_app/test.html', test_var)
 
 def mypost(request):
     return render(request, 'my_app/mypost.html')
+
+def media(request):
+    return render(request, 'my_app/media.html')

@@ -5,6 +5,7 @@ from quotes.views import Register
 
 
 urlpatterns = [
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('', include('my_app.urls')),
