@@ -1,0 +1,14 @@
+[{
+    "CORSConfiguration": {
+        "CORSRule": {
+            "AllowedOrigin": "*",
+            "AllowedMethod": [
+                "GET",
+                "POST",
+                "PUT"
+            ],
+            "AllowedHeader": "*"
+        },
+        "_xmlns": "http://s3.amazonaws.com/doc/2006-03-01/"
+    }
+}]

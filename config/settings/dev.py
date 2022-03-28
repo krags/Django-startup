@@ -1,8 +1,10 @@
+from .aws import *
 import os
 from decouple import config
 import django_on_heroku
 import dj_database_url
 from pathlib import Path
+from storages.backends.s3boto3 import S3Boto3Storage
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 TEMPLATES_DIR =  os.path.join(BASE_DIR, "templates")
