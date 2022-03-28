@@ -80,9 +80,17 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#Project specific
+STATICFILES_DIRS = [
+	BASE_DIR / "static", 
+]
+#Application specific
 STATIC_URL = "/static/"
 
+#Collectstatic collects static files here.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#File uploads
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
