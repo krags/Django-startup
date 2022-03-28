@@ -5,7 +5,6 @@ from dotenv import load_dotenv, find_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 TEMPLATE_DIR =  os.path.join(BASE_DIR,"templates")
 
-
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'quotes.apps.QuotesConfig',
