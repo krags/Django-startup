@@ -1,4 +1,7 @@
 from .base import *
+from decouple import config
+import django_on_heroku
+import dj_database_url
 
 DEBUG = False
 
@@ -40,9 +43,7 @@ django_on_heroku.settings(locals())
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-print('key= ', AWS_ACCESS_KEY_ID)
-print('secret= ', AWS_SECRET_ACCESS_KEY)
-print('storage= ', AWS_STORAGE_BUCKET_NAME)
+
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3Boto3.S3Boto3Storage'
