@@ -1,15 +1,14 @@
-# resume_pics.urls.py
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from . import views
 
+#3-29-22
+# from django.contrib.staticfiles.urls import static
+# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
 # Original code below
 urlpatterns = [
     path('', views.photo_carousel, name='photo_carousel'),
-]
-
-print('settings.MEDIA_URL ', settings.MEDIA_URL)
-print('settings.MEDIA_ROOT ', settings.MEDIA_ROOT)
-
-print(" ")
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,5 @@
+# http://www.django.co.zw/en/tutorials/setting-django-s-static-and-media-urls/
+
 import os
 from pathlib import Path
 from decouple import config
@@ -48,6 +50,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
             ]
         },
     }
@@ -77,13 +80,17 @@ USE_TZ = True
 STATICFILES_DIRS = [
 	BASE_DIR / "static", 
 ]
-#Application specific
+# Static application files.
 STATIC_URL = "/static/"
 
 #Collectstatic collects static files here.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#File uploads
+STATICFILES_DIRS = [
+    "./media",
+]
+
+#File uploads location.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 

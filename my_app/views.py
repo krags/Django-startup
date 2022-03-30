@@ -38,5 +38,5 @@ def test(request):
 def mypost(request):
     return render(request, 'my_app/mypost.html')
 
-def media(request):
-    return render(request, 'my_app/media.html')
+# def media(request):
+#     return render(request, 'my_app/media.html')
