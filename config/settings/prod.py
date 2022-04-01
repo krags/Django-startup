@@ -56,8 +56,8 @@ AWS_HEADERS = {'Access-Control-Allow-Origin': '*',}
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-print('STATIC_URL -> ', STATIC_URL)
-print('MEDIA_URL -> ', MEDIA_URL)
+# print('STATIC_URL -> ', STATIC_URL)
+# print('MEDIA_URL -> ', MEDIA_URL)
 
 # Aws operations information
 # storages and boto3 are required.
