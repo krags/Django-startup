@@ -54,5 +54,13 @@ AWS_LOCATION = 'static'
 AWS_QUERYSTRING_AUTH = False
 AWS_HEADERS = {'Access-Control-Allow-Origin': '*',}
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+# Do this after we get this working without S3.
+#STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+STATIC_ROOT = os.path.joint(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.joint(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
