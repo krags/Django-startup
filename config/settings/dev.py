@@ -18,16 +18,14 @@ DATABASES = {
 
 STATICFILES_DIRS = [
 	BASE_DIR / "static", 
+    BASE_DIR / "media",
+
 ]
 # Static application files.
 STATIC_URL = "/static/"
 
 #Collectstatic collects static files here.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = [
-    "./media",
-]
 
 #File uploads location.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
