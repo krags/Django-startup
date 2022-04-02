@@ -59,8 +59,24 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 #MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# These are the variables I have been using.
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
 
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+	BASE_DIR / "static", 
+    BASE_DIR / "media",
+
+]
+# Static application files.
+STATIC_URL = "/static/"
+
+#Collectstatic collects static files here.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#File uploads location.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
