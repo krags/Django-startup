@@ -2,6 +2,7 @@ from .base import *
 from decouple import config
 import django_on_heroku
 import dj_database_url
+import django_heroku
 
 DEBUG = False
 
@@ -56,8 +57,8 @@ AWS_HEADERS = {'Access-Control-Allow-Origin': '*',}
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 
 # Do this after we get this working without S3.
-#STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # These are the variables I have been using.
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -80,3 +81,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #File uploads location.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+django_heroku.settings(locals())
+
