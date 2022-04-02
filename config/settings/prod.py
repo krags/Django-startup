@@ -4,7 +4,7 @@ import django_on_heroku
 import dj_database_url
 import django_heroku
 
-DEBUG = False
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['keithragsdale.com', 'agile-gorge-76642.herokuapp.com']
 
