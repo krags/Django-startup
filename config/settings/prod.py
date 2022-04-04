@@ -62,17 +62,11 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
-
-
 django_heroku.settings(locals())
 
-# Static application files.
-STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static'
+# ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
