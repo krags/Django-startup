@@ -23,13 +23,16 @@
     <title>Carousel!</title>
   </head>
   <body>
-    <div><h1>bootstrap.html</h1></div>
+    <div class="text-center">
+      <p><h1>Pics From My Carousel</h1></p><br>
+    </div>
 
-    <div><img src="{% static 'cat.jpg' %}" alt="cat"></div>
-    
-    {% for photo in photos %}
-    <img src='{{photo.image.url }}'></img>
-    {%endfor%}
+    <div class='container'>
+      {% for photo in photos %}
+      <img src='{{photo.image.url }}' width="{{photo.width}}" alt="{{photo.title}}"></img>
+      <p class ="lead">{{photo.title}}</p><hr>
+      {%endfor%}
+    </div class='container'>
 
   </body>
 </html>

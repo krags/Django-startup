@@ -1,15 +1,14 @@
 # http://www.django.co.zw/en/tutorials/setting-django-s-static-and-media-urls/
 
-import os
 from pathlib import Path
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-TEMPLATES_DIR =  os.path.join(BASE_DIR, "templates")
+TEMPLATES_DIR =  Path(BASE_DIR, "templates")
 SECRET_KEY = config('SECRET_KEY')
 
-
 INSTALLED_APPS = [
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -35,6 +34,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # 'django.contrib.staticfiles.finders.FileSystemFinder',
+    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
 ]
 
 ROOT_URLCONF = "config.urls"

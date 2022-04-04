@@ -1,5 +1,7 @@
 heroku run bash -a agile-gorge-76642
 
+heroku local -f Procfile.windows
+
 3-26-22
 Using this as my master project.
 Deployment still has errors and won't run.

@@ -1,5 +1,9 @@
 from .base import *
+from decouple import config
+from pathlib import Path
 
+
+DJANGO_SETTINGS_MODULE=config('DJANGO_SETTINGS_MODULE')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -16,17 +20,13 @@ DATABASES = {
    }
 }
 
-STATICFILES_DIRS = [
-	BASE_DIR / "static", 
-    BASE_DIR / "media",
-
-]
 # Static application files.
-STATIC_URL = "/static/"
+STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
-#Collectstatic collects static files here.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
-#File uploads location.
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'static/images'
+STATIC_ROOT = BASE_DIR / 'staticfiles'

@@ -8,8 +8,3 @@ from . import views
 urlpatterns = [
     path('', views.photo_carousel, name='photo_carousel'),
 ]
-
-print('settings.MEDIA_URL ', settings.MEDIA_URL)
-print('settings.MEDIA_ROOT ', settings.MEDIA_ROOT)
-
-print(" ")
